@@ -23,7 +23,7 @@ function writePassword() {
 function generatePassword() {
   var passwordLength = prompt("Please enter password length between 8-128 characters")
   console.log(passwordLength);
-
+// Add if statement for not meeting password requirements
   if (passwordLength <8 || passwordLength >128) {
    prompt("Please enter 8-128 characters");
 
@@ -37,18 +37,38 @@ function generatePassword() {
   var hasLowerCase = confirm("Include lowercase?");
   console.log(hasLowerCase);
   };
+  // If statement if no criteria has been chosen
   if (!hasNumbers && !hasSpecialCharacters && !hasUpperCase && !hasLowerCase) {
     choices = alert("You mush choose a criteria!");
   }
+  //All 4 criteria have been chosen
   else if (hasNumbers && hasSpecialCharacters && hasUpperCase && hasLowerCase) {
-    choices = character.concat(specialCharacters, numericCharacters, upperCasedCharacters, lowerCasedCharacters);
+    choices = numericCharacters.concat(specialCharacters, upperCasedCharacters, lowerCasedCharacters);
+  }
+  //3 criteria have been chosen
+  else if (hasNumbers && hasSpecialCharacters && hasUpperCase) {
+    choices = numericCharacters.concat(specialCharacters, upperCasedCharacters);
+  }
+  else if (hasNumbers && hasSpecialCharacters && hasLowerCase) {
+    choices = numericCharacters.concat(specialCharacters, lowerCasedCharacters);
+  }
+  else if (hasNumbers && hasUpperCase && hasLowerCase) {
+    choices = numericCharacters.concat(upperCasedCharacters, lowerCasedCharacters);
+  }
+  else if (hasSpecialCharacters && hasUpperCase && hasLowerCase) {
+    choices = specialCharacters.concat(upperCasedCharacters, lowerCasedCharacters);
+  }  
+    //2 Criteria have been chosen
+  else if (hasNumbers && hasSpecialCharacters) {
+    choices = numericCharacters.concat(specialCharacters);
+  }
+  else if (hasNumbers && hasUpperCase) {
+    choices = numericCharacters.concat(upperCasedCharacters);
+    
+  }  
   }
 
 
-
-
-
-}
 
 
 
