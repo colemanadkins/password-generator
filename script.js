@@ -30,7 +30,7 @@ function generatePassword() {
   }
   // If statement if no criteria has been chosen
   if (!hasNumbers && !hasSpecialCharacters && !hasUpperCase && !hasLowerCase) {
-    choices = alert("You mush choose a criteria!");
+    choices = alert("You must choose a criteria!");
   }
   //All 4 criteria have been chosen
   else if (hasNumbers && hasSpecialCharacters && hasUpperCase && hasLowerCase) {
