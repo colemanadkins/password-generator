@@ -77,8 +77,21 @@ function generatePassword() {
   else if (hasUpperCase && hasLowerCase) {
     choices = upperCasedCharacters.concat(lowerCasedCharacters);
   }
+  // 1 Criteria chosen
+  else if (hasNumbers) {
+    choices = numericCharacters;
+  }
+  else if (hasSpecialCharacters) {
+    choices = specialCharacters;
+  }
+  else if (hasUpperCase) {
+    choices = upperCasedCharacters;
+  }
+  else if (hasLowerCase) {
+    choices = lowerCasedCharacters;
   }
   }
+  
 
 
 
