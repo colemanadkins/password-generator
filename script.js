@@ -18,7 +18,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 function generatePassword() {
@@ -28,7 +27,7 @@ function generatePassword() {
   if (passwordLength <8 || passwordLength >128) {
    prompt("Please enter 8-128 characters");
 
-  } else {}
+  } else {
   var hasNumbers = confirm("Include Numbers?");
   console.log(hasNumbers);
   var hasSpecialCharacters = confirm("Include special character?");
@@ -37,7 +36,21 @@ function generatePassword() {
   console.log(hasUpperCase);
   var hasLowerCase = confirm("Include lowercase?");
   console.log(hasLowerCase);
-} 
+  };
+  if (!hasNumbers && !hasSpecialCharacters && !hasUpperCase && !hasLowerCase) {
+    choices = alert("You mush choose a criteria!");
+  }
+  else if (hasNumbers && hasSpecialCharacters && hasUpperCase && hasLowerCase) {
+    choices = character.concat(specialCharacters, numericCharacters, upperCasedCharacters, lowerCasedCharacters);
+  }
+
+
+
+
+
+}
+
+
 
   
 // Add event listener to generate button
