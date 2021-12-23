@@ -3,14 +3,15 @@
 var generateBtn = document.querySelector("#generate");
 // Password criteria variables
 var specialCharacters = ["@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", ".",];
-var numericCharacters = ["0123456789"];
+var numericCharacters = [0,1,2,3,4,5,6,7,8,9];
 var lowerCasedCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
 var upperCasedCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",];
-var confirmSpecialCharacters;
-var confirmNumericCharacters;
-var confirmLowerCasedCharacters;
-var confirmUpperCasedCharacters;
+var hasSpecialCharacters;
+var hasNumbers;
+var hasLowerCase;
+var hasUpperCase;
 var choices;
+var randomPassword = [];
 
 // Write password to the #password input
 function writePassword() {
@@ -90,20 +91,15 @@ function generatePassword() {
   else if (hasLowerCase) {
     choices = lowerCasedCharacters;
   }
+  for (var i = 0; i < passwordLength; i++) {
+    var pickChoices = choices[Math.floor(Math.random() *choices.length)];
+    randomPassword.push(pickChoices);
   }
-  
+  var ps = randomPassword.join("");
+  return ps
+}
 
-
-
-
-
-  
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 // See Note1
 
-
-
-
-
-// Testing Section
