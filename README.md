@@ -19,3 +19,7 @@ You will see the website meets the following acceptance criteria:
 * THEN a password is generated that matches the selected criteria
 * WHEN the password is generated
 * THEN the password is either displayed in an alert or written to the page
+
+![alt text](https://github.com/colemanadkins/password-generator/blob/main/password%20generator%20screenshot.PNG)
+
+Click [here](https://colemanadkins.github.io/password-generator/) to generate a password!
